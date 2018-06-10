@@ -1,10 +1,15 @@
 import React from 'react';
-import hoistNonReactStatics from 'hoist-non-react-statics';
 
-const enhance = (WrappedComponent) => {
-  class WithThisHoc extends React.Component {
-    static getInitialProps() {
-      return { val: 123 };
+export default (WrappedComponent) => {
+  return class WithThisHoc extends React.Component {
+    static async getInitialProps(ctx) {
+      let props = {}
+
+      if (WrappedComponent.getInitialProps) {
+        props = await WrappedComponent.getInitialProps(ctx)
+      }
+
+      return {...props, val: 123}
     }
 
     render() {
@@ -15,8 +20,4 @@ const enhance = (WrappedComponent) => {
       );
     }
   }
-
-  return WithThisHoc;
-};
-
-export default enhance;
+}
