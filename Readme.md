@@ -4,6 +4,11 @@
 - npm run build
 - npm start
 - Open localhost:3000
+- Open the browser console
 - Click the button to trigger an error
 
-Notice the prop specified in the `withThisHoc` are not available in the rendering of the error page.
+Notice the console log message says:
+> This should log a value of 123: undefined
+
+It should say
+> This should log a value of 123: undefined
