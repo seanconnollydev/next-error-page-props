@@ -11,4 +11,4 @@ Notice the console log message says:
 > This should log a value of 123: undefined
 
 It should say
-> This should log a value of 123: undefined
+> This should log a value of 123: 123
