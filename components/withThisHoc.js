@@ -8,7 +8,7 @@ const enhance = (WrappedComponent) => {
     }
 
     render() {
-      console.log(this.props.val);
+      console.log('This should log a value of 123:', this.props.val);
 
       return (
         <WrappedComponent {...this.props} />
